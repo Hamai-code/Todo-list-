@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestionnaire de taches collaboratif</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Gestionnaire de taches collaboratif</h1>
+
+    <section class="panel">
+      <h2>Ajouter une tache</h2>
+      <form id="task-form" class="task-form">
+        <input id="desc" type="text" placeholder="Description" required>
+        <input id="date" type="date" required>
+        <button type="submit">Ajouter</button>
+      </form>
+      <p id="message" class="message"></p>
+    </section>
+
+    <section class="panel stats">
+      <strong>Statistique du mois:</strong>
+      <span id="done-month">0</span> tache(s) terminee(s)
+    </section>
+
+    <section class="panel">
+      <h2>Liste des taches</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Description</th>
+            <th>Date limite</th>
+            <th>Etat</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="task-body"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

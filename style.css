@@ -1,0 +1,131 @@
+﻿:root {
+  --bg: #eef3f8;
+  --panel: #ffffff;
+  --text: #1f2a36;
+  --muted: #5d6a78;
+  --accent: #0a7ea4;
+  --danger: #c0392b;
+  --ok: #0b8457;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(140deg, #e8f1f7, #f6fbff);
+  color: var(--text);
+}
+
+.container {
+  width: min(1000px, 94vw);
+  margin: 32px auto;
+  display: grid;
+  gap: 16px;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+.panel {
+  background: var(--panel);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(10, 30, 60, 0.08);
+}
+
+.task-form {
+  margin-top: 12px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 2fr 1fr auto;
+}
+
+input, button {
+  font: inherit;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+input {
+  border: 1px solid #ccd7e2;
+}
+
+button {
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  margin-top: 12px;
+  border-collapse: collapse;
+}
+
+th, td {
+  border-bottom: 1px solid #e1e8f0;
+  padding: 10px;
+  text-align: left;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.actions .btn-delete {
+  background: var(--danger);
+}
+
+.actions .btn-done {
+  background: var(--ok);
+}
+
+.done td {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.message {
+  min-height: 20px;
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.message.error {
+  color: var(--danger);
+}
+
+.message.ok {
+  color: var(--ok);
+}
+
+@media (max-width: 720px) {
+  .task-form {
+    grid-template-columns: 1fr;
+  }
+
+  table, thead, tbody, tr, th, td {
+    display: block;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    border-bottom: 1px solid #dce5ee;
+    padding: 10px 0;
+  }
+
+  td {
+    border: none;
+    padding: 6px 0;
+  }
+}
